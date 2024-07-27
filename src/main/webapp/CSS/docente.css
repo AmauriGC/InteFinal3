@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-montserrat);
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    overflow: hidden;
+}
+
+.indexhtml {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-rosybrown);
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--padding-xl);
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.img-docente-parent {
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 15vw;
+    height: calc(100% - 80px);
+    background-color: var(--color-antiquewhite);
+    padding: var(--padding-62xl) 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    margin-left: 15vw;
+    width: calc(100vw);
+    height: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.img-docente-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0 0 var(--br-3xs) 0;
+}
+
+.docente-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-6xl) 0 0;
+    align-items: center;
+}
+
+.cerrar-sesion {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.consultar_aspirante,
+.consultar_grupos {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 925px) {
+    .left {
+        padding-top: var(--padding-34xl);
+        padding-bottom: var(--padding-34xl);
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .consultar_aspirante,
+    .consultar_grupos{
+        font-size: var(--font-size-mid);
+    }
+
+    .left {
+        gap: 45px;
+        padding: 34px var(--padding-xl);
+    }
+}

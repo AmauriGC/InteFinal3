@@ -1,0 +1,86 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.table-container {
+    width: max-content;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 5px  rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px black;
+}
+
+thead {
+    background-color: rgb(228, 214, 176);
+    color: #000000;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tbody tr:hover {
+    background-color: rgb(228, 214, 176);
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.boton {
+    width: 100%;
+    display: block;
+    /*margin: 20px auto;*/
+    padding: 10px;
+    background-color: #56bd52;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0px 5px  rgba(0, 0, 0, 0.2);
+}
+
+.boton:hover {
+    background-color: #029e40;
+}
+
+.boton a {
+    color: inherit; /* Hereda el color del botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: block; /* Hace que el enlace ocupetodo el botón */
+    width: 100%; /* Asegura que el enlace ocupatodo el ancho del botón */
+    height: 15px; /* Asegura que el enlace ocupe toda la altura del botón */
+    text-align: center; /* Centra el texto dentro del botón */
+    padding: 5px; /* Añade un poco de espacio alrededor del texto */
+}
+
+.boton a:hover {
+    color: #ffffff;
+}

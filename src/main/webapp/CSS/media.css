@@ -1,0 +1,22 @@
+:root {
+    --font-montserrat: 'Montserrat', sans-serif;
+
+    --font-size-2xl: 18px;
+    --font-size-mid: 17px;
+    --font-size-5xl: 24px;
+
+    --color-antiquewhite: #e8d6ca;
+    --color-black: #000;
+    --color-rosybrown: #a18c81;
+
+    --gap-xl: 10px;
+
+    --padding-62xl: 80px;
+    --padding-xl: 20px;
+    --padding-34xl: 50px;
+    --padding-10xs: 5px;
+    --padding-3xs: 10px;
+    --padding-6xl: 25px;
+
+    --br-3xs: 10px;
+}

@@ -1,0 +1,147 @@
+body,html {
+    height: 100%;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    background: linear-gradient(#a5a09d, #ecf0f1, #a5a09d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.box-area {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-box {
+    background: #2c3e50;
+    color: white;
+    flex-basis: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-box .featured-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.right-box {
+    flex-basis: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-text h2 {
+    margin: 0;
+    color: #333;
+}
+
+.header-text p {
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+        width: max-content;
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+    background-color: #026d9e;
+    color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        box-shadow: 0px 5px  rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:hover {
+    background-color: #bedaeb;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #696969;
+    border-radius: 10px;
+    color: black;
+}
+
+/* Añadido para centrar y poner en negritas las etiquetas de "Nombre" y "Contraseña" */
+.form-group label,
+.input-group label{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Añadido para separar los elementos dentro de la caja derecha */
+.right-box .form-group,
+.right-box input[type="submit"] {
+    margin-bottom: 25px; /* Espacio entre los elementos */
+}
+
+.right-box .input-group{
+    margin-bottom: 5px; /* Espacio entre los elementos */
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    color: #333;
+}
+
+.forgot a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-text a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+    .box-area {
+        flex-direction: column;
+    }
+
+    .left-box,
+    .right-box {
+        flex-basis: 100%;
+    }
+}
