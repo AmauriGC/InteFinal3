@@ -38,9 +38,9 @@ public class ContraServlet extends HttpServlet {
         dao.actualizacionCodigoRecuperacion(u);
 
         // 5. Generar correo electrónico con enlace
-        String enlace = "http://localhost:8080/Inte_war_exploded/recuContra?codigo=" + codigo;
+        String enlace = "http://localhost:8080/integradoraFinal_war_exploded/recuContra?codigo=" + codigo;
         String mensaje = "Para recuperar su contraseña haga click en el siguiente enlace,\n" +
-                "<a href=\"" + enlace + "\">Recuperar contraseña </a>";
+                "\n<a href=\"" + enlace + "\">Recuperar contraseña </a>";
         try {
             new GmailSender().sendMail(correo, "Recuperación de Contraseña", mensaje);
         } catch (Exception e) {
