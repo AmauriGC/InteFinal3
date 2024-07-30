@@ -15,12 +15,13 @@ public class Usuario implements Serializable {
     private int telefono;
     private String curp;
     private int estatus;
+    private int id_rol;
     private String codigo;
 
     public Usuario() {
     }
 
-    public Usuario(int id_usuario, String nombre, String apellidos, String correo, String contra, int telefono, String curp, int estatus, String codigo) {
+    public Usuario(int id_usuario, String nombre, String apellidos, String correo, String contra, int telefono, String curp, int estatus, int id_rol, String codigo) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -29,6 +30,7 @@ public class Usuario implements Serializable {
         this.telefono = telefono;
         this.curp = curp;
         this.estatus = estatus;
+        this.id_rol = id_rol;
         this.codigo = codigo;
     }
 
@@ -93,6 +95,10 @@ public class Usuario implements Serializable {
     public void setEstatus(int estatus) {
         this.estatus = estatus;
     }
+
+    public int getId_rol() {return id_rol;}
+
+    public void setId_rol(int id_rol) {this.id_rol = id_rol;}
 
     public String getCodigoRecuperacion() { return codigo;}
 

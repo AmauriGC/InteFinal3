@@ -39,6 +39,7 @@ public class UsuarioDao {
                 u.setTelefono(rs.getInt("telefono"));
                 u.setCurp(rs.getString("curp"));
                 u.setEstatus(rs.getInt("estatus"));
+                u.setId_rol(rs.getInt("id_rol"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,6 +117,7 @@ public class UsuarioDao {
                     u.setTelefono(rs.getInt("telefono"));
                     u.setCurp(rs.getString("curp"));
                     u.setEstatus(rs.getInt("estatus"));
+                    u.setId_rol(rs.getInt("id_rol"));
                 }
             }
         } catch (SQLException e) {

@@ -16,12 +16,14 @@ public class UsuarioServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id_usuario = Integer.parseInt(req.getParameter("id_usuario"));
+        int id_rol = Integer.parseInt(req.getParameter("id_rol"));
         //regresa comillas vacias ya que busca el id_aspirante pero manda " " y hace que marque el error
         //puedo hacer
         UsuarioDao dao = new UsuarioDao();
         Usuario u = dao.getOne(id_usuario);
         HttpSession sesion = req.getSession();
         sesion.setAttribute("usuario",u);
+        sesion.setAttribute("id_rol",id_rol);
         resp.sendRedirect("registrarUsuario.jsp");
     }
 
@@ -43,9 +45,31 @@ public class UsuarioServlet extends HttpServlet {
             resp.sendRedirect(ruta);
         } else {
             //el usuario si existe en la base de datos
-            ruta = "administrador.jsp";
+            //ruta = "administrador.jsp";
             HttpSession sesion = req.getSession();
             sesion.setAttribute("usuario",u);
+            //resp.sendRedirect(ruta);
+
+            sesion.setAttribute("id_usuario", u.getId_usuario());
+            sesion.setAttribute("nombre", u.getNombre());
+            sesion.setAttribute("apellidos", u.getApellidos());
+            sesion.setAttribute("id_rol", u.getId_rol());
+
+            int id_rol = u.getId_rol();
+            switch(id_rol){
+                case 1: // es administrador
+                    ruta="administrador.jsp";
+                    break;
+                case 2: // es cliente registrado
+                    ruta="docente.jsp";
+                    break;
+                case 3: // es Encargado
+                    ruta="error.jsp";
+                    break;
+                default:
+                    ruta="index.jsp";
+                    break;
+            }
             resp.sendRedirect(ruta);
         }
     }
