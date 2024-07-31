@@ -12,9 +12,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebFilter(urlPatterns = {
-        /*
-         Paginas de usuario
-         */
+        "/gestionUsuario.jsp",
+        "/gestiongrupos.jsp",
+        "/olvide.jsp",
+        "/recuperacion.jsp",
+        "/solucitudRecuperacion"
 }) //Direcciones que va a proteger este filtro
 public class filtroUsuario implements Filter{
     @Override
@@ -30,7 +32,7 @@ public class filtroUsuario implements Filter{
         boolean isUsuario = false;
 
         // Verificar si la sesión no es nula y si el atributo tipoRol está presente y es igual a "Cliente"
-        if (session != null && "Cliente".equals(session.getAttribute("id_rol"))) {
+        if (session != null && "2".equals(session.getAttribute("id_rol"))) {
             isUsuario = true;
         }
 
