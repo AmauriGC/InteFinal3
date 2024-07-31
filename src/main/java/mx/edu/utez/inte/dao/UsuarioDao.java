@@ -16,16 +16,16 @@ public class UsuarioDao {
     //Programar una función R (lectura) para obtener un usuario
     //con el fin de hacer el inicio de sesión
 
-    public Usuario getOne(String nombre, String contra) {
+    public Usuario getOne(String correo, String contra) {
         Usuario u = new Usuario();
-        String query = "select * from usuarios where nombre = ? and contra = sha2(?,256)";
+        String query = "select * from usuarios where correo = ? and contra = sha2(?,256)";
 
         try {
             //1) conectarnos a la BD
             Connection con = DatabaseConnectionManager.getConnection();
             //2) Configurar el query y ejecutarlo
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, nombre);
+            ps.setString(1, correo);
             ps.setString(2, contra);
             ResultSet rs = ps.executeQuery();
             //3) Obtener la información
@@ -50,7 +50,7 @@ public class UsuarioDao {
     //insertar usuarios
     public boolean insert(Usuario u) {
         boolean flag = false;
-        String query = "insert into usuarios (nombre,apellidos,correo,contra,telefono,curp,estatus) values(?,?,?,sha2(?,256),?,?,?) ";
+        String query = "insert into usuarios (nombre,apellidos,correo,contra,telefono,curp,estatus,id_rol) values(?,?,?,sha2(?,256),?,?,?,2) ";
         try {
             Connection con = DatabaseConnectionManager.getConnection();
             PreparedStatement ps = con.prepareStatement(query);

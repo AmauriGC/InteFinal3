@@ -23,8 +23,8 @@
                 <form id="loginForm" method="post" action="login">
                     <div class="form-group mt-5 mb-2">
 
-                        <label for="nombre">Nombre: </label>
-                        <input type="text" name="nombre" id="nombre" >
+                        <label for="correo">Correo: </label>
+                        <input type="text" name="correo" id="correo" >
 
                     </div>
                     <div class="form-group mt-5 mb-2">
