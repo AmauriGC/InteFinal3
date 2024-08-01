@@ -11,6 +11,7 @@
 <body>
 
 <!-- un formulario para insertar el usuario -->
+
 <%  HttpSession sesion = request.getSession();
     Usuario u = (Usuario) sesion.getAttribute("usuario");
     if (u == null) { // Que estoy registrando %>

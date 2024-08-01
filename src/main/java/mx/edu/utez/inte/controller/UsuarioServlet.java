@@ -29,14 +29,14 @@ public class UsuarioServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1) Obtener la información del formulario
-        String nombre = req.getParameter("nombre");
+        String correo = req.getParameter("correo");
         String contra = req.getParameter("contra");
         String ruta = "index.jsp";
 
         //2) conectarme a la base de datos y buscar al usuario segun
         // las credenciales del form
         UsuarioDao dao = new UsuarioDao();
-        Usuario u = dao.getOne(nombre, contra);
+        Usuario u = dao.getOne(correo, contra);
 
         if (u.getNombre() == null) {
             //El usuario no existe en la base de datos
@@ -51,23 +51,30 @@ public class UsuarioServlet extends HttpServlet {
             //resp.sendRedirect(ruta);
 
             sesion.setAttribute("id_usuario", u.getId_usuario());
-            sesion.setAttribute("nombre", u.getNombre());
-            sesion.setAttribute("apellidos", u.getApellidos());
             sesion.setAttribute("id_rol", u.getId_rol());
 
             int id_rol = u.getId_rol();
+
             switch(id_rol){
                 case 1: // es administrador
                     ruta="administrador.jsp";
+
+                    sesion.removeAttribute("usuario");
+                    sesion.removeAttribute("id_rol");
+                    sesion.removeAttribute("mensaje");
+
                     break;
                 case 2: // es cliente registrado
                     ruta="docente.jsp";
-                    break;
-                case 3: // es Encargado
-                    ruta="error.jsp";
+                    sesion.removeAttribute("usuario");
+                    sesion.removeAttribute("id_rol");
+                    sesion.removeAttribute("mensaje");
                     break;
                 default:
                     ruta="index.jsp";
+                    sesion.removeAttribute("usuario");
+                    sesion.removeAttribute("id_rol");
+                    sesion.removeAttribute("mensaje");
                     break;
             }
             resp.sendRedirect(ruta);

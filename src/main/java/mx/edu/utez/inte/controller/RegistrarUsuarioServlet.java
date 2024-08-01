@@ -16,7 +16,13 @@ public class RegistrarUsuarioServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        HttpSession sesion = req.getSession();
+
+        sesion.removeAttribute("usuario");
+        sesion.removeAttribute("mensaje");
+
         String operacion = req.getParameter("operacion");
+
         if (operacion.equals("registrar")) {
 
             String nombre = req.getParameter("nombre");
@@ -29,7 +35,7 @@ public class RegistrarUsuarioServlet extends HttpServlet {
             int estatus = Integer.parseInt(req.getParameter("estatus"));
             String ruta = "gestionUsuario.jsp";
 
-            HttpSession sesion = req.getSession();
+            //HttpSession sesion = req.getSession();
 
             if (!contra1.equals(contra2)) {
                 sesion.setAttribute("mensaje2", "Las contraseñas no coinciden");
